@@ -6,9 +6,7 @@ let AddPlayerName = ({dispatch}) => {
   let input;
   const ENTER_KEY_CODE = 13;
   const addPlayerNameOnEnter = (e) => {
-    // console.log(e.keyCode, e.key, e.which);
     if (e.which === ENTER_KEY_CODE) {
-      console.log('click');
       dispatch(addPlayerName(input.value));
       input.value = '';
     }

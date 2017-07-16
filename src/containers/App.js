@@ -1,9 +1,11 @@
 import React from 'react';
 import AddPlayerName from './AddPlayerName';
+import PlayersList from './PlayersList';
 
-const App = () => (
+let App = () => (
   <div>
     <AddPlayerName />
+    <PlayersList />
   </div>
 );
 
