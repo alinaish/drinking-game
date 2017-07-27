@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addPlayerName } from '../actions';
+import { addPlayer } from '../actions';
 
-let AddPlayerName = ({dispatch}) => {
+let AddPlayer = ({dispatch}) => {
   let input;
   const ENTER_KEY_CODE = 13;
-  const addPlayerNameOnEnter = (e) => {
+  const addPlayerOnEnter = (e) => {
     if (e.which === ENTER_KEY_CODE) {
-      dispatch(addPlayerName(input.value));
+      dispatch(addPlayer(input.value));
       input.value = '';
     }
   };
@@ -15,13 +15,13 @@ let AddPlayerName = ({dispatch}) => {
   return (
     <div>
       <input
-        onKeyPress={addPlayerNameOnEnter}
+        onKeyPress={addPlayerOnEnter}
         ref={node => {input = node}}
       />
     </div>
   );
 };
 
-AddPlayerName = connect()(AddPlayerName);
+AddPlayer = connect()(AddPlayer);
 
-export default AddPlayerName;
+export default AddPlayer;

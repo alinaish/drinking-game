@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import RemovePlayer from './RemovePlayer'
 
-let PlayersList = ({ playerNames }) => {
+let PlayersList = ({ players }) => {
   return (
     <ul>
-      {playerNames.map((name, i) => {
+      {players.map((player, i) => {
         return (
-          <li key={i}>{name}</li>
+          <li key={player.id}>
+            {player.name}
+            <RemovePlayer id={player.id}/>
+          </li>
         );
       })}
     </ul>
@@ -15,7 +19,7 @@ let PlayersList = ({ playerNames }) => {
 
 const mapStateToProps = (state) => {
   return {
-    playerNames: state.playerNames
+    players: state.players
   };
 };
 

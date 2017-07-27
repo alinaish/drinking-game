@@ -1,10 +1,10 @@
 import React from 'react';
-import AddPlayerName from './AddPlayerName';
+import AddPlayer from './AddPlayer';
 import PlayersList from './PlayersList';
 
 let App = () => (
   <div>
-    <AddPlayerName />
+    <AddPlayer />
     <PlayersList />
   </div>
 );

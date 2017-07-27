@@ -1,8 +1,17 @@
-export const ADD_PLAYER_NAME = 'ADD_PLAYER_NAME';
+export const ADD_PLAYER = 'ADD_PLAYER';
+export const REMOVE_PLAYER = 'REMOVE_PLAYER';
 
-export function addPlayerName(name) {
+export function addPlayer(name) {
   return {
-    type: ADD_PLAYER_NAME,
+    type: ADD_PLAYER,
     name
+  };
+}
+
+
+export function removePlayer(id) {
+  return {
+    type: REMOVE_PLAYER,
+    id
   };
 }
