@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import RemovePlayer from './RemovePlayer'
+import { removePlayer } from '../actions'
 
-let PlayersList = ({ players }) => {
+let PlayersList = ({ players, onPlayerRemove}) => {
   return (
     <ul>
       {players.map((player, i) => {
         return (
           <li key={player.id}>
             {player.name}
-            <RemovePlayer id={player.id}/>
+            <a onClick={() => onPlayerRemove(player.id)}>remove</a>
           </li>
         );
       })}
@@ -23,6 +23,14 @@ const mapStateToProps = (state) => {
   };
 };
 
-PlayersList = connect(mapStateToProps)(PlayersList);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onPlayerRemove: (id) => {
+      dispatch(removePlayer(id));
+    }
+  };
+}
+
+PlayersList = connect(mapStateToProps, mapDispatchToProps)(PlayersList);
 
 export default PlayersList;
